@@ -214,11 +214,15 @@ class UserFilesController extends Controller
 
             $path = $fileInfo->hash_user . DIRECTORY_SEPARATOR . $fileInfo->hash_file;
             if (Storage::exists($path) &&
-                Storage::delete($path) &&
-                UserFile::find($id)->delete()
+                Storage::delete($path)
             ) {
                 $result['delete'] = 1;
             }
+
+            if (UserFile::find($id)->delete()) {
+                $result['delete'] = 1;
+            }
+
         }
 
         return $result;
