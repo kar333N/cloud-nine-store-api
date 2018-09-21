@@ -14,7 +14,7 @@ class UserFilesTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        foreach (range(1, 20) as $index) {
+        foreach (range(1, 5000) as $index) {
             $hashFile = $faker->md5;
             DB::table('user_files')->insert([
                 'description' => $faker->text($maxNbChars = 200),

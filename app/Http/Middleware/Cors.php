@@ -17,7 +17,8 @@ class Cors
     {
         $response = $next($request);
 
-        $response->headers->set('Access-Control-Allow-Origin' , '*');
+//        $response->headers->set('Access-Control-Allow-Origin' , '*');
+        $response->headers->set('Access-Control-Allow-Origin' , 'http://cloud-nine-store.ru');
         $response->headers->set('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT, DELETE');
         $response->headers->set('Access-Control-Allow-Headers',
             'Content-Type, Content-Length, Accept, Accept-Encoding, Accept-Language, Authorization, Application');

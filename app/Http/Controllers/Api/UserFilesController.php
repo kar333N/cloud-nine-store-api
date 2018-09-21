@@ -176,6 +176,7 @@ class UserFilesController extends Controller
             $this->createResultArray(null);
         }
 
+//        header('Access-Control-Allow-Origin: *');
         return $this->result;
     }
 

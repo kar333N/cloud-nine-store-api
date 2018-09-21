@@ -13,9 +13,9 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'Karen',
-            'email' => 'ksagatelyan@gmail.com',
-            'password' => password_hash('1234', PASSWORD_BCRYPT),
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => password_hash('secret', PASSWORD_BCRYPT),
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);

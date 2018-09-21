@@ -28,6 +28,7 @@ keys:
 Далее инсталировать зависимости с помощью [Composer], выполнив команду _composer install_.
 
 Для корректной работы системы аутентификации данного API, необходимо выполнить команды 
+( предварительно подключившись к машине [Homestead] командой _vagrant ssh_)
 
 _php artisan migrate --force --seed_
 
@@ -36,9 +37,18 @@ _php artisan passport:install --force_
 Которые кроме применения миграции заполнят рабочие таблицы фейковыми данными, и проведут первоначальные настройки системы
 аунтетификации.
 
+После заполнения таблиц в базе данных, логин и пароль администратора соответсвенно будет иметь значение:
+
+**admin@gmail.com : secret** 
+
 Так же необходимо, создать новый файл с переменными окружения .env
 
-Это рекомендуется сделать путем, копирования файла .env.example и сохранением под именем .env   
+Это рекомендуется сделать путем, копирования файла .env.example и сохранением под именем .env
+
+После чего выполнить команду
+
+_php artisan key:generate_   
+ 
  
 #### Используемые в процессе разработки технологии
 
@@ -47,7 +57,7 @@ _php artisan passport:install --force_
 - Технология Cross-origin resource sharing [CORS]
 - Генератор тестовых данных fzaninotto/Faker 
 
-[Cloud9]: https://github.com/Bashka/bricks_cli_routing/releases
+[Cloud9]: https://github.com/kar333N/cloud-nine-store-front.git
 [Homestead]: https://laravel.com/docs/5.7/homestead
 [Homestead.yaml]: ./Homestead.yaml
 [Composer]: http://getcomposer.org/
